@@ -1,6 +1,6 @@
 # taytay-exam-vue
 
-This template should help get you started developing with Vue 3 in Vite.
+Hello 这是我的毕设项目的前端部分！
 
 ## Recommended IDE Setup
 
