@@ -8,8 +8,10 @@ import { getAllExamService } from '@/api/exam'
 import { getAllTeachersService, getAllStudentService } from '@/api/user'
 import { getCourseListService } from '@/api/course'
 import { ElMessage } from 'element-plus';
+import useUserInfoStore from '@/stores/userInfo'
 
 
+const userInfoStore = useUserInfoStore()
 
 //成绩表格模型
 const scores = ref([{
@@ -260,7 +262,7 @@ const updateScore = async() => {
             </el-table-column>
             <el-table-column label="操作">
                 <template #default="{ row }">
-                    <el-button v-if="row.status === '待定'" type="primary" plain @click="showDialog(row)"
+                    <el-button v-if="row.status === '待定' || userInfoStore.info.role === 'admin'" type="primary" plain @click="showDialog(row)"
                         round>录入成绩</el-button>
                     <el-button v-else type="primary" plain disabled round>录入成绩</el-button>
                 </template>

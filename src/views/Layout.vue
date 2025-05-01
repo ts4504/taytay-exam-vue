@@ -143,7 +143,7 @@ const handleCommand=(command)=>{
 
 
                 <!-- 管理员菜单项 -->
-                <el-menu-item index="/admin/announcement">
+                <el-menu-item index="/admin/announcement" v-if="userInfoStore.info.role === 'admin'">
                     <el-icon><Menu /></el-icon>
                     <span>公告管理</span>
                 </el-menu-item>
